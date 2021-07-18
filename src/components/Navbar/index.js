@@ -1,5 +1,6 @@
 import React from 'react'
 import {Flex, Wrapper} from './styles'
+import { Link } from "react-router-dom"
 import Logo from '../../assets/logo.svg'
 
 const Navbar = () => {
@@ -7,10 +8,10 @@ const Navbar = () => {
         <>
             <Wrapper>
                 <Flex direction="row" justify="space-around" alignItems="center">
-                    <a href="/top">
+                    <Link to="/top">
                         <img src={Logo}/>
-                    </a>
-                    <a href="/bookmark">Bookmarks</a>
+                    </Link>
+                    <Link to="/bookmark">Bookmarks</Link>
                 </Flex>
             </Wrapper>
         </>
