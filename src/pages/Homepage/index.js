@@ -86,7 +86,6 @@ const Homepage = ({match}) => {
                 <Flex direction="row" justify="center" alignItems="center">
                     <img src="https://www.icegif.com/wp-content/uploads/loading-icegif-1.gif" alt="loading_gif" style={{marginTop: '5em'}} />
                 </Flex>
-                
             :
                
             <Wrapper>
