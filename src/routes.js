@@ -9,6 +9,7 @@ const Router = () => {
             <Switch>
                 <Route exact path='/bookmark' component={Bookmark} />
                 <Route exact path='/:topic' component={Homepage} />
+                <Redirect from="/" to="/top"/>
             </Switch>
         </BrowserRouter>
     )
