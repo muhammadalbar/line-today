@@ -20,7 +20,7 @@ const Homepage = ({match}) => {
     }
 
     const fetchNews = async () => {
-        const res = await axios.get('https://cors-anywhere.herokuapp.com/https://today.line.me/id/portaljson')
+        const res = await axios.get('https://today.line.me/id/portaljson')
         let items = res.data
         setCategoryList(items.result.categoryList);
         setData(items)
