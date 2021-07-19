@@ -26,19 +26,21 @@ const Homepage = ({match}) => {
         // setIsLoading(false)
         try {
             const res = await axios.get('https://cors-anywhere.herokuapp.com/https://today.line.me/id/portaljson')
-            if(res.status === 403){
-                alert('Click OK to grant api access and comeback to this tab and try refresh it')
-                window.open("https://cors-anywhere.herokuapp.com/corsdemo")
-            }
-            else{
+            // if(res.status === 403){
+            //     alert('Click OK to grant api access and comeback to this tab and try refresh it')
+            //     window.open("https://cors-anywhere.herokuapp.com/corsdemo")
+            // }
+            // else{
                 let items = res.data
                 setCategoryList(items.result.categoryList);
                 setData(items)
                 setIsLoading(false)
-            }
+            // }
             
         } 
         catch(err){
+            alert('Click OK to grant api access and comeback to this tab and try refresh it')
+            window.open("https://cors-anywhere.herokuapp.com/corsdemo")
             console.log(err)
         }
     }
