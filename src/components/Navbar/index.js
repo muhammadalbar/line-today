@@ -9,7 +9,7 @@ const Navbar = () => {
             <Wrapper>
                 <Flex direction="row" justify="space-around" alignItems="center">
                     <Link to="/top">
-                        <img src={Logo}/>
+                        <img src={Logo} alt="line-today-logo" />
                     </Link>
                     <Link to="/bookmark">Bookmarks</Link>
                 </Flex>

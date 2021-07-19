@@ -13,15 +13,13 @@ export const Flex = styled.div`
 export const Wrapper = styled.div`
     margin-top: 1em;
     width: 100%;
-    // padding-left: 3em;
-    // padding-right: 3em;
     
     .section{
         margin: 2em 2em;
     }
     @media (max-width: 414px){
         .section{
-            margin: 15px 5px;
+            margin: 35px 5px;
         }
     }
 
@@ -31,6 +29,8 @@ export const Paper = styled.div`
     width: 360px;
     height: 315px;
     margin-top: 1em;
+    margin-left: 3em;
+    margin-right: 3em;
     background: #FFFFFF;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 10px 10px;
@@ -61,6 +61,11 @@ export const Paper = styled.div`
         cursor: pointer;
         box-shadow: 0px 12px 15px rgba(0, 0, 0, 0.3);
         transition: 0.5s;
+    }
+
+    @media (max-width: 1280px){
+        margin-left: 2em;
+        margin-right: 2em;
     }
 
     @media (max-width: 414px){
@@ -120,6 +125,10 @@ export const Topics = styled.a`
     margin-top: 1em;
     cursor: pointer;
     text-decoration: none;
+
+    .active{
+        font-weight: 800;
+    }
     
 
     @media(max-width: 414px){

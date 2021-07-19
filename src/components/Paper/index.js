@@ -6,7 +6,7 @@ const Paper = ({image, title, publisher, icon, handleOpen, handleDelete, handleI
     return(
         <Wrapper>
             <div onClick={handleOpen}>
-                <img src={`https://obs.line-scdn.net/${image}`} />
+                <img src={`https://obs.line-scdn.net/${image}`} alt="headline_pic" />
                 <div style={{marginLeft: '0.5em'}}>
                     <p className="title">{title}</p>
                     <Flex direction="row" justify="space-between">
@@ -14,6 +14,7 @@ const Paper = ({image, title, publisher, icon, handleOpen, handleDelete, handleI
                         <img 
                             src={icon} 
                             className="icon" 
+                            alt="thumbnail"
                             onClick={handleIcon} 
                         />
                     </Flex>

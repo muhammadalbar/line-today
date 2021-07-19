@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import {Flex, Wrapper, Paper, Topics} from './styles'
+import {Flex, Wrapper, Topics} from './styles'
 import Navbar from '../../components/Navbar'
+import Paper from '../../components/Paper'
 import Save from '../../assets/icons/save.png'
 import FilledSaved from '../../assets/icons/filled-save.png'
 
@@ -77,6 +78,7 @@ const Homepage = ({match}) => {
     useEffect(() => {
         fetchNews()
         getLocal()
+        console.log()
     }, [])
 
     return(
@@ -86,14 +88,13 @@ const Homepage = ({match}) => {
                 <Flex direction="row" justify="center" alignItems="center">
                     <img src="https://www.icegif.com/wp-content/uploads/loading-icegif-1.gif" alt="loading_gif" style={{marginTop: '5em'}} />
                 </Flex>
-                
             :
                
             <Wrapper>
                 <Flex direction="row" justify="space-around" wrap="wrap" className="topic_wrap">
                     {categoryList.map((items, i) => (
                         <Topics key={i} onClick={() => changeTopic(items.name.toLowerCase())}>
-                            {items.name}
+                            <span className={items.name.toLowerCase() === topic ? 'active': ''}>{items.name}</span>
                         </Topics>
                     ))}
                 </Flex>
@@ -106,21 +107,15 @@ const Homepage = ({match}) => {
                                     </Flex>
                                     <Flex direction="row" justify="space-around" wrap="wrap">
                                         {headline.sections[0].articles.map((news) => (
-                                            <Paper key={news.id} onClick={() => handleOpen(news.url.url)}>
-                                                <img src={`https://obs.line-scdn.net/${news.thumbnail.hash}`}  alt="thumbnail"/>
-                                                <div style={{marginLeft: '0.5em'}}>
-                                                    <p className="title">{handleTitle(news.title)}</p>
-                                                    <Flex direction="row" justify="space-between">
-                                                        <p className="publisher">{news.publisher}</p>
-                                                        <img 
-                                                            alt="icon-bookmark"
-                                                            src={handlePic(news.id)} 
-                                                            className="icon" 
-                                                            onClick={(e) => handleSave(e, news.id, news.title, news.publisher, news.thumbnail.hash, news.url.url)} 
-                                                        />
-                                                    </Flex>
-                                                </div>
-                                            </Paper>
+                                            <Paper 
+                                                key={news.id}
+                                                title={handleTitle(news.title)}
+                                                publisher={news.publisher}
+                                                image={news.thumbnail.hash}
+                                                icon={handlePic(news.id)}
+                                                handleOpen={() => handleOpen(news.url.url)}
+                                                handleIcon={(e) => handleSave(e, news.id, news.title, news.publisher, news.thumbnail.hash, news.url.url)}
+                                            />
                                         ))}
                                     </Flex>
                                 </div>
