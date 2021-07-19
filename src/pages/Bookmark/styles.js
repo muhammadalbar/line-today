@@ -12,6 +12,7 @@ export const Flex = styled.div`
 
 export const Wrapper = styled.div`
     margin-top: 1em;
+    margin-bottom: 3em;
     width: 100%;
     // padding-left: 3em;
     // padding-right: 3em;

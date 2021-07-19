@@ -19,23 +19,12 @@ const Homepage = ({match}) => {
         window.location.href = url
     }
     const fetchNews = async () => {
-        // const res = await axios.get('https://cors-anywhere.herokuapp.com/https://today.line.me/id/portaljson')
-        // let items = res.data
-        // setCategoryList(items.result.categoryList);
-        // setData(items)
-        // setIsLoading(false)
         try {
             const res = await axios.get('https://cors-anywhere.herokuapp.com/https://today.line.me/id/portaljson')
-            // if(res.status === 403){
-            //     alert('Click OK to grant api access and comeback to this tab and try refresh it')
-            //     window.open("https://cors-anywhere.herokuapp.com/corsdemo")
-            // }
-            // else{
-                let items = res.data
-                setCategoryList(items.result.categoryList);
-                setData(items)
-                setIsLoading(false)
-            // }
+            let items = res.data
+            setCategoryList(items.result.categoryList);
+            setData(items)
+            setIsLoading(false)
             
         } 
         catch(err){
