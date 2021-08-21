@@ -13,7 +13,7 @@ const Homepage = ({match}) => {
     const [isLoading, setIsLoading]= useState(true);
 
     const changeTopic = (topic) => {
-        window.location.href = `/${topic}`
+        window.location.href = `/${topic}` 
     }
     const handleOpen = (url) => {
         window.location.href = url
